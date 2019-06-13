@@ -1,6 +1,7 @@
 language: php
 sudo: false
-
+php:
+  -
 matrix:
   fast_finish: true
   include:
@@ -19,12 +20,8 @@ matrix:
     - php: "master"
       os: linux
       env: CHECK_MBSTRING=0
-    - php: "hhvm"
-      os: linux
-      env: CHECK_MBSTRING=1
   allow_failures:
     - php: "master"
-    - php: "hhvm"
 
 install:
     - composer self-update
